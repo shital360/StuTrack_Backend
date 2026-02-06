@@ -16,12 +16,12 @@ app.use("/api/students", studentRoutes);
 // Login route
 app.post("/login", (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;  // ✅ CHANGE: username → email
     
-    console.log("Login attempt:", username);
+    console.log("Login attempt:", email);
 
-    // Temporary check (replace with database later)
-    if (username === "shital_1" && password === "shital123") {
+    // ✅ CHANGE: shital_1 → shital@gmail.com
+    if (email === "shital@gmail.com" && password === "shital123") {
       res.json({ success: true, message: "Login successful" });
     } else {
       res.json({ success: false, message: "Invalid credentials" });
