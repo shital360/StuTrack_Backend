@@ -7,6 +7,12 @@ const Student = sequelize.define("Student", {
     autoIncrement: true,
     primaryKey: true,
   },
+  
+  rollNo: {  // ✅ ADD - Frontend ले यो चाहिन्छ
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
 
   name: {
     type: DataTypes.STRING,
@@ -15,18 +21,22 @@ const Student = sequelize.define("Student", {
 
   email: {
     type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
+    allowNull: true,  // ✅ Optional बनायो
   },
 
-  password: {
+  className: {  // ✅ RENAME: studentClass → className
     type: DataTypes.STRING,
     allowNull: false,
   },
 
-  studentClass: {
+  attendance: {  // ✅ ADD
     type: DataTypes.STRING,
-    allowNull: false,
+    defaultValue: "0%",
+  },
+
+  results: {  // ✅ ADD
+    type: DataTypes.JSON,  // JSON field for storing results object
+    defaultValue: {},
   }
 });
 
