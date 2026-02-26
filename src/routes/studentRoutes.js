@@ -2,7 +2,7 @@ import express from "express";
 import {
   getAllStudents,
   getStudentById,
-  getStudentByRoll,  // ✅ ADD
+  getStudentByRoll,  
   createStudent,
   updateStudent,
   deleteStudent,
@@ -11,7 +11,7 @@ import {
 const router = express.Router();
 
 router.get("/", getAllStudents);
-router.get("/:rollNo", getStudentByRoll);  // ✅ CHANGE: ID → rollNo
+router.get("/:rollNo", getStudentByRoll);  
 router.post("/", createStudent);
 router.put("/:id", updateStudent);
 router.delete("/:id", deleteStudent);

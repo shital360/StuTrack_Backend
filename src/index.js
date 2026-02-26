@@ -6,21 +6,21 @@ import studentRoutes from "./routes/studentRoutes.js";
 const app = express();
 const PORT = 5000;
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
-// Routes
+
 app.use("/students", studentRoutes);
 
-// Admin Login route
+
 app.post("/login", (req, res) => {
   try {
     const { email, password } = req.body;
     
     console.log("🔐 Admin login attempt:", email);
 
-    if (email === "shital@gmail.com" && password === "shital123") {
+    if (email === "admin@gmail.com" && password === "admin123") {
       res.json({ success: true, message: "Login successful", user: { email } });
     } else {
       res.json({ success: false, message: "Invalid credentials" });
@@ -31,7 +31,7 @@ app.post("/login", (req, res) => {
   }
 });
 
-// ✅ TEMPORARY ROUTE - Database मा Students Add गर्न (काम सकेपछि delete गर्नुहोस्)
+
 app.get("/seed", async (req, res) => {
   try {
     const Student = (await import("./Model/Student.js")).default;
@@ -57,7 +57,7 @@ app.get("/seed", async (req, res) => {
         email: "sita@example.com",
         attendance: "92%",
         results: { Math: 92, Science: 88, English: 85, Nepali: 90, Social: 87 }
-      },
+      },  
       {
         rollNo: "3",
         name: "Hari Koirala",

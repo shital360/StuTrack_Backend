@@ -8,7 +8,7 @@ const Student = sequelize.define("Student", {
     primaryKey: true,
   },
   
-  rollNo: {  // ✅ ADD - Frontend ले यो चाहिन्छ
+  rollNo: {  
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
@@ -21,21 +21,21 @@ const Student = sequelize.define("Student", {
 
   email: {
     type: DataTypes.STRING,
-    allowNull: true,  // ✅ Optional बनायो
+    allowNull: true,  
   },
 
-  className: {  // ✅ RENAME: studentClass → className
+  className: {  
     type: DataTypes.STRING,
     allowNull: false,
   },
 
-  attendance: {  // ✅ ADD
+  attendance: {  
     type: DataTypes.STRING,
     defaultValue: "0%",
   },
 
-  results: {  // ✅ ADD
-    type: DataTypes.JSON,  // JSON field for storing results object
+  results: {  
+    type: DataTypes.JSON,  
     defaultValue: {},
   }
 });

@@ -1,4 +1,4 @@
-// Get all results
+
 export const getAllResults = async (req, res) => {
   try {
     res.json({ success: true, message: "Get all results", data: [] });
@@ -8,7 +8,7 @@ export const getAllResults = async (req, res) => {
   }
 };
 
-// Get result by ID
+
 export const getResultById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -19,7 +19,6 @@ export const getResultById = async (req, res) => {
   }
 };
 
-// Create result
 export const createResult = async (req, res) => {
   try {
     const resultData = req.body;
